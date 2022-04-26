@@ -1,0 +1,11 @@
+declare
+  report clob := null;
+begin
+  report := DBMS_AUTO_INDEX.REPORT_ACTIVITY (
+              activity_start => TO_TIMESTAMP('2022-04-21', 'YYYY-MM-DD'),
+              activity_end   => TO_TIMESTAMP('2022-04-22', 'YYYY-MM-DD'),
+              type           => 'TEXT',
+              section        => 'SUMMARY',
+              level          => 'BASIC');
+end;
+/
